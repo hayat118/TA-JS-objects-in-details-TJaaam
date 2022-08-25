@@ -14,3 +14,15 @@ class Question{
   }
 
 }
+
+
+let firstQuestion = new Question(
+  'Where is the capital of Jordan',
+  ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],
+  1
+);
+let secondQuestion = new Question(
+  'Where is the capital of Jamaica',
+  ['Tashkent', 'Amaan', 'Kingston', 'Nairobi'],
+  2
+);
