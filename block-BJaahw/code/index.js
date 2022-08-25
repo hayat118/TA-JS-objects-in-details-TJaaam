@@ -1,4 +1,6 @@
 // 1. Create a function `createUser` that accepts `name` and `age` and returns a new object with those properties.
+     
+
 
 // 2. Add a method named `sayHello` inside the object created above. When called it should alert `Welcome {user}`. Replace `{user}` with the name of the user.
 
@@ -17,3 +19,56 @@
 // 9. Check by creating two instance of the class using data of two different persons and re-assign the value of `personOne` and `personTwo`
 
 // 10. Try calling `personOne.sayHello()` and `personTwo.sayHello()`. Check if you get the required output.
+
+// class pattern
+
+class CreateUser{
+  constructor(name,age){
+     this.name=name;
+     this.age=age;
+  }
+
+  sayHello(){
+    alert (`welcome${this.name}`)
+  }
+  
+}
+
+let personOne= new CreateUser("Pankaj",25);
+let personTwo= new CreateUser("Rekha",22);
+
+// factory pattern
+
+function createUser(name,age){
+  let user={};
+   user.name=name;
+   user.age=age;
+
+
+   user.sayHello=function(){
+    alert (`welcome${user.name}`)
+
+   }
+   return user;
+}
+
+let personOne=  createUser("Pankaj",25);
+
+// prototypal nature
+
+function createUser(name,age){
+  let user=Object.create({userMethods});
+   user.name=name;
+   user.age=age;
+   return user;
+}
+
+let userMethods={
+  sayHello:function(){
+    alert (`welcome${user.name}`)
+
+  }
+}
+
+let personOne=  createUser("Pankaj",25);
+
