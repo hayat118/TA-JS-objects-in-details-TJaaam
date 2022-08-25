@@ -22,7 +22,7 @@
 
 // class pattern
 
-class CreateUser{
+class User{
   constructor(name,age){
      this.name=name;
      this.age=age;
@@ -34,8 +34,8 @@ class CreateUser{
   
 }
 
-let personOne= new CreateUser("Pankaj",25);
-let personTwo= new CreateUser("Rekha",22);
+let personOne= new User("Pankaj",25);
+let personTwo= new User("Rekha",22);
 
 // factory pattern
 
@@ -65,10 +65,28 @@ function createUser(name,age){
 
 let userMethods={
   sayHello:function(){
-    alert (`welcome${user.name}`)
+    alert (`welcome${this.name}`)
 
   }
 }
 
 let personOne=  createUser("Pankaj",25);
 
+// Pseudoclassical
+
+function CreateUser(name,age){
+  // let user=Object.create({userMethods});
+   this.name=name;
+   this.age=age;
+
+}
+
+CreateUser.prototype={
+  sayHello:function(){
+    alert (`welcome${this.name}`)
+
+  }
+}
+
+let personOne= new CreateUser("Pankaj",25);
+let personTwo= new CreateUser("Rekha",22);
