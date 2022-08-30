@@ -6,6 +6,10 @@
 
 function makePerson(name, age) {
   // add code here
+  obj={};
+  obj.name=name;
+  obj.age=age;
+  return obj;
 }
 
 var vicky = makePerson('Vicky', 24);
@@ -22,6 +26,9 @@ var vicky = makePerson('Vicky', 24);
 
 var personStore = {
   // add code here
+  greet:function(){
+    console.log(` hello`)
+  }
 };
 
 // /********* Uncomment this line to test your work! *********/
@@ -31,6 +38,10 @@ var personStore = {
 
 function personFromPersonStore(name, age) {
   // add code here
+  let obj= Object.create(personStore);
+  obj.name=name;
+  obj.age=age;
+  return obj;
 }
 
 var sandra = personFromPersonStore('Sandra', 26);
@@ -43,8 +54,17 @@ var sandra = personFromPersonStore('Sandra', 26);
 /*** CHALLENGE 3 of 3 ***/
 
 // add code here
+var personStore = {
+  // add code here
+  greet:function(){
+    console.log(` hello`)
+  },
+  introduce:function(){
+    console.log(`Hi,my name is ${obj.name}`)
+  }
+};
 
-// sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
+sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
 
 /****************************************************************
                     USING THE 'NEW' KEYWORD
@@ -54,6 +74,11 @@ var sandra = personFromPersonStore('Sandra', 26);
 
 function PersonConstructor() {
   // add code here
+  function greet(){
+    console.log(`hello`)
+
+  }
+  
 }
 
 // /********* Uncomment this line to test your work! *********/
