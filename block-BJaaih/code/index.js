@@ -4,6 +4,16 @@
 */
 
 // myMap function goes here
+function myMap(num){
+  let arr=[];
+  arr.num=num;
+  return arr;
+}
+Array.prototype={
+ myMap(){
+   
+ }
+}
 
 // Test the myMap function you created above
 
