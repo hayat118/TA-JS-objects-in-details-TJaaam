@@ -6,63 +6,68 @@ class Person {
   }
 
   eat(){
-    return eat;
+    console.log(`${this.name} can eat`)
   }
   sleep(){
-    return sleep;
+    console.log(`${this.name} can sleep`)
   }
   walk(){
-   return walk;
+    console.log(`${this.name} can walk`)
   }
 }
 
-let pankaj= new Person("pankaj",25,"male");
+// let pankaj= new Person("pankaj",25,"male");
 
 // 1st stage
 class Player extends Person {
-  constructor(sportsName){
-    super(this.name,age,gender);
+  constructor(name,age,gender,sportsName){
+    super(name,age,gender);
     this.sportsName=sportsName;
 
   }
 
   play(){
-     return play;
+     console.log(`${this.name} can play`)
   }
 }
 
 class Teacher extends Person{
-  constructor(instituteName){
-    super(this.name,age,gender);
+  constructor(name,age,gender,instituteName){
+    super(name,age,gender);
     this.instituteName=instituteName;
   }
 
   teach(){
-    return teach;
+     console.log(`${this.name} can teach`)
+    
   }
 }
 
 class Artist extends Person{
-  constructor(){
-    super(this.name,age,gender);
-    isKind=true;
+  constructor(name,age,gender,kind){
+    super(name,age,gender);
+    this.Kind=kind;
   }
 
   createArt(){
-    return createart;
+     console.log(`${this.name} can create art`)
+    
   }
 }
 
 // 2nd stage
 
 class Cricketer extends Player {
-  constructor(teamName){
-    super(sportsName);
+  constructor(name,age,gender,sportsName,teamName){
+    super(name,age,gender,sportsName);
     this.teamName=teamName;
   }
 
   playCricket(){
-     return playcricket;
+     console.log(`${this.name} can play cricket`)
+    
   }
 }
+
+let pankaj= new Cricketer("pankaj",25,"male","cricket","india");
 
